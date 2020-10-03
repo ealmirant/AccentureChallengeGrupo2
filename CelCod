@@ -1,0 +1,113 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+
+<head>
+<title>Conversor de Código Celular</title>
+<style>
+td {font-family:arial;}
+b {font-family:arial;font-size:19pt;color:green;}
+big {font-family:arial;font-size:19pt;color:black;}
+caption {font-family:arial;font-size:13pt;color:blue;font-weight:bold;}
+</style>
+</head>
+
+<body bgcolor="#ffffff" background="/fundo.jpg">
+<script language="javascript" src="/seguranca.js"></script>
+<script language="javascript" src="sinais.js"></script>
+<br>
+
+<br><br>
+<center>
+
+<table width="100%" border="0">
+<tr><td style="font-family:arial;font-size:13pt;color:blue;font-weight:bold;">Conversor de Código Celular</td>
+<td align="right"><a href="comunicacao.html">Voltar</a></td>
+</tr>
+</table>
+
+<br><br>
+
+<table width="100%" border="0" cellpadding="10">
+<tr><td align="center">
+
+
+<SCRIPT LANGUAGE="JAVASCRIPT">
+<!--
+
+//celular code converter- By Emerson Almiranten (ealmirant@gmail.com)
+
+var charCodes=new Array(36); 
+charCodes["a"]="2";
+charCodes["b"]="22";
+charCodes["c"]="222";
+charCodes["d"]="3";
+charCodes["e"]="33";
+charCodes["f"]="333";
+charCodes["g"]="4";
+charCodes["h"]="44";
+charCodes["i"]="444";
+charCodes["j"]="5";
+charCodes["k"]="55";
+charCodes["l"]="555";
+charCodes["m"]="6";
+charCodes["n"]="66";
+charCodes["o"]="666";
+charCodes["p"]="7";
+charCodes["q"]="77";
+charCodes["r"]="777";
+charCodes["s"]="7777";
+charCodes["t"]="8";
+charCodes["u"]="88";
+charCodes["v"]="888";
+charCodes["w"]="9";
+charCodes["x"]="99";
+charCodes["y"]="999";
+charCodes["z"]="9999";
+charCodes[" "]="0";
+var temp=''
+
+function encode() {
+document.morsecode.chars.value=document.morsecode.chars.value.toLowerCase();
+document.morsecode.codebox.value="";
+temp=''
+var chars=document.morsecode.chars.value.split("");
+
+for (a=0; a<chars.length; a++) {
+if (chars[a]!=" ") {
+if (window.charCodes[chars[a]]) {
+document.morsecode.codebox.value+=charCodes[chars[a]]+"    ";
+temp+=chars[a]+"="+charCodes[chars[a]]+"\n";
+}
+else
+temp+=chars[a]+"=( Caractere não reconhecido )\n";
+}
+else temp+="\n";
+}
+
+document.celcode.codebox.value+="\n\n\nExplicação:\n\n"+temp
+}
+// -->
+</SCRIPT>
+
+<FORM NAME="celsecode">
+<font face="arial">Digite uma palavra ou frase:<br>
+<INPUT style="color:blue" TYPE="TEXT" NAME="chars" size="100" value="AreaSeg">
+<INPUT TYPE="BUTTON" VALUE="CODIFICAR" onClick="encode()" 
+style="color:white;background:green;font-weight:bold;"><BR><BR>
+<TEXTAREA style="color:blue;font-family:arial;font-weight:bold;"
+NAME="codebox" cols="50" rows="20" style="width:100%" wrap="virtual"> </TEXTAREA><br><INPUT TYPE="BUTTON" VALUE="COPIAR" onClick="document.celsecode.codebox.select(); document.execCommand('Copy');" style="color:white;background:blue;font-weight:bold;">
+</FORM>
+
+<p><font face="arial" size="-2">Este Script &eacute; Grupo 2</font><br>
+<font face="arial, helvetica" size="-2"><a href="http://accenture.com">JavaScript
+Kit</a></font></font></p>
+
+</td>
+</tr>
+</table>
+
+</center>
+</body>
+
+</html>
